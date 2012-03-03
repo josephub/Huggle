@@ -1,0 +1,53 @@
+CREATE TABLE `campaigns` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `coupon_type_id` int(11) NOT NULL,
+ `start_date` varchar(10) NOT NULL,
+ `end_date` varchar(10) NOT NULL,
+ `image` varchar(250) DEFAULT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin
+
+CREATE TABLE `coupons` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `code` varchar(50) NOT NULL,
+ `taggingId` int(11) NOT NULL,
+ `isAvailed` int(11) DEFAULT NULL,
+ `campaignId` int(11) NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin
+
+CREATE TABLE `coupon_infos` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `rank` int(11) NOT NULL,
+ `pageView` int(11) NOT NULL,
+ `no_of_huggles` int(11) NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1
+
+CREATE TABLE `coupon_types` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `name` varchar(50) NOT NULL,
+ `description` varchar(100) NOT NULL,
+ `coupon_info_id` int(11) NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=latin1
+
+CREATE TABLE `users` (
+ `id` int(11) NOT NULL DEFAULT '0',
+ `lastName` varchar(50) DEFAULT NULL,
+ `middleName` varchar(50) NOT NULL,
+ `firstName` varchar(50) NOT NULL,
+ `address` varchar(150) NOT NULL,
+ `cellNo` varchar(50) NOT NULL,
+ `isAdmin` int(11) NOT NULL,
+ PRIMARY KEY (`id`),
+ UNIQUE KEY `id` (`id`),
+ UNIQUE KEY `id_2` (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1
+
+CREATE TABLE `user_coupon_mappings` (
+ `id` int(11) NOT NULL AUTO_INCREMENT,
+ `user_id` int(11) NOT NULL,
+ `coupon_id` int(11) NOT NULL,
+ PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1

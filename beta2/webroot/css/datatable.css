@@ -1,0 +1,44 @@
+#datatable tbody tr.even:hover,#datatable tbody tr.even td.row_selected {
+	background-color: #ECFFB3;
+}
+
+#datatable tbody tr.odd:hover,#datatable tbody tr.odd td.row_selected {
+	background-color: #E6FF99;
+}
+
+#datatable tr.even:hover {
+	background-color: #ECFFB3;
+}
+
+#datatable tr.even:hover td.sorting_1 {
+	background-color: #DDFF75;
+}
+
+#datatable tr.even:hover td.sorting_2 {
+	background-color: #E7FF9E;
+}
+
+#datatable tr.even:hover td.sorting_3 {
+	background-color: #E2FF89;
+}
+
+#datatable tr.odd:hover {
+	background-color: #E6FF99;
+}
+
+#datatable tr.odd:hover td.sorting_1 {
+	background-color: #D6FF5C;
+}
+
+#datatable tr.odd:hover td.sorting_2 {
+	background-color: #E0FF84;
+}
+
+#datatable tr.odd:hover td.sorting_3 {
+	background-color: #DBFF70;
+}
+
+#datatable tr.row_selected td{
+	background-color: rgb(159, 175, 209);
+}
+

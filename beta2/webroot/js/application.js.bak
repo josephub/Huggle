@@ -1,0 +1,10 @@
+$(document).ready(function(){
+  var App = {
+    SideBar: {},
+    Rightx: {}
+  };
+  
+  App.Rightx = new Rightx({el: $('#rightx')});
+  App.SideBar = new Sidebar({el: $('#sidebar')});
+
+});

@@ -1,0 +1,98 @@
+-- phpMyAdmin SQL Dump
+-- version 3.4.5
+-- http://www.phpmyadmin.net
+
+
+--
+-- Table structure for table `categories`
+--
+
+CREATE TABLE IF NOT EXISTS `categories` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `category` varchar(50) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `categories`
+--
+
+--
+-- Table structure for table `coupons`
+--
+
+--
+-- Table structure for table `stores`
+--
+
+CREATE TABLE IF NOT EXISTS `stores` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) DEFAULT NULL,
+  `location` varchar(50) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `stores`
+--
+
+INSERT INTO `stores` (`id`, `name`, `location`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Nike', 'Ayala Active Zone', NULL, NULL, NULL),
+(2, 'Adidas', 'sm cebu', NULL, NULL, NULL),
+(3, 'cellshop', 'colon cebu', NULL, NULL, '0000-00-00 00:00:00'),
+(4, NULL, NULL, NULL, NULL, '0000-00-00 00:00:00'),
+(5, NULL, NULL, NULL, NULL, '0000-00-00 00:00:00'),
+(6, 'cellshop', 'colon', NULL, NULL, '0000-00-00 00:00:00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tickets`
+--
+
+CREATE TABLE IF NOT EXISTS `tickets` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `hash` varchar(255) DEFAULT NULL,
+  `data` varchar(255) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `expires` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `hash` (`hash`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+DROP TABLE `users`
+CREATE TABLE IF NOT EXISTS `users` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) DEFAULT NULL,
+  `password` varchar(50) DEFAULT NULL,
+  `role` varchar(20) DEFAULT NULL,
+  `created` datetime DEFAULT NULL,
+  `modified` datetime DEFAULT NULL,
+  `email` varchar(50) NOT NULL,
+  `cellNo` varchar(50) NOT NULL,
+  `lastName` varchar(50) DEFAULT NULL,
+  `middleName` varchar(50) DEFAULT NULL,
+  `firstName` varchar(50) DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`, `role`, `created`, `modified`, `email`, `cellNo`, `lastName`, `middleName`, `firstName`, `deleted_at`) VALUES
+(1, 'root', '34412f55cf7cb741a217290fcd8cb4f6d6d9e9a6', '1', '2012-02-07 08:19:30', '2012-02-21 09:26:27', 'root1@caresharing.eu', '', NULL, NULL, NULL, NULL),
+(2, 'joseph', '867b235d6c8ea1c3e6441180513b3bb546e5bf9a', NULL, '2012-02-09 11:17:11', '2012-02-21 12:39:15', 'joseph@caresharing.eu', '', NULL, NULL, NULL, NULL),
+-- --------------------------------------------------------

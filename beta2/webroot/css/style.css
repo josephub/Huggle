@@ -1,0 +1,48 @@
+div.error-message{color: red;}
+div#contentx{padding: 10px; overflow: auto;}
+div#contentx h1{font-family: arial; color: #676863; font-size: 20pt; font-weight: bold; text-transform: uppercase; margin: 0px; padding: 0px; border-bottom: 5px solid #eee; paddding-bottom: 5px;}
+	div#sidebar{float: left; width: 150px; margin-right: 20px; overflow: hidden; font-family: arial; font-size: 9pt; color: #000; margin-bottom: 10px;}
+		div#sidebar h2{font-family: arial; font-size: 14pt; color: #061a80; text-transform: uppercase; margin: 0px; padding: 0px;}
+		div#sidebar ul{list-style: none; margin: 0px; padding: 0px;}
+		div#sidebar ul li{display: block;}
+		div#sidebar ul li a{display: block; padding: 3px; border-bottom: 1px solid #fff; background: #eee; color: #49494a; text-decoration: none; text-shadow: #fff 1px 1px 1px;}
+		div#sidebar ul li a:hover{display: block; color: #fff; text-decoration: none; background: #6f769c; text-shadow: #000 1px 1px 1px;}
+	div#rightx{float: left; width: 768px; overflow: hidden; margin-bottom: 10px; font-family: arial; color: #000; font-size: 8pt;}
+		div#rightx h2{font-family: arial; font-size: 13pt; color: #2c456a; padding: 0px; margin: 0px; text-transform: uppercase; padding-top: 15px; padding-bottom: 10px; border-bottom: 2px solid #618faf; margin-bottom: 10px;}
+		div#rightx h2 cite{color: #777; font-style: normal;}
+		div#rightx h2 span{font-size: 15pt;}
+		div#rightx p{font-family: arial; color: #000; font-size: 8pt; margin: 0px; padding: 0px; margin-bottom: 10px;}
+		div#rightx form{margin: 0px; padding: 0px;}
+		div#rightx form label{display: block; width: 150px; float: left; padding-top: 4px;}
+		div#rightx form input{font-family: arial; color: #777; font-size: 8pt; width: 170px;}
+		div#rightx form select{font-family: arial; color: #777; font-size: 8pt; width: 140px;}
+		div#rightx form textarea{font-family: arial; color: #777; font-size: 8pt; width: 200px; height: 100px;}
+		div#rightx form input.submitx{margin-left: 150px; font-family: arial; color: #000; font-size: 8pt; cursor: pointer;}
+
+div.footbox{-webkit-border-radius: 15px; -moz-border-radius: 15px; border-radius: 15px; background:#fff; padding: 3px; border:1px solid #d7d7d7; display: inline; float: left; margin-right: 4px; margin-top: 4px;}
+div.footbox p{display: block; float: left; position: absolute; background: #e6e6e6; color: #fff; margin-left: 10px; margin-top: 109px; width: 160px; overflow: hidden;}
+div.footbox p span{background: #4b484a; display: block; width: 160px; overflow: hidden; font-family: arial; color: #fff; font-size: 8pt; text-transform: uppercase;}
+div.footbox p strong{font-size: 13pt; font-weight: bold; color: #4687e9;}
+div.footbox img{-webkit-border-radius: 0px; -moz-border-radius: 0px; border-radius: 0px; border: 0px; width: 160px; height: 134px;}
+
+/*popup*/
+div#valid{margin: 0px; padding: 0px; padding-top: 10px; padding-bottom: 10px;}
+div#valid h2{background: url('../img/cheese.png') left no-repeat; background-position: 10px; font-family: arial; font-size: 8pt; color: #777; font-weight: normal; margin: 0px; padding: 0px; padding-left: 50px; padding-top: 10px; height: 25px;}
+div#valid h2 cite{font-style: normal; font-weight: bold; color: #000;}
+div#valid h2 a{font-family: arial; font-size: 8pt; color: #777; font-weight: normal; text-decoration: none;}
+div#valid h2 a:hover{text-decoration: underline;}
+div.popup{display: none;}
+div.pop{background: url('../img/popbg.png') top left no-repeat;font-family: arial; color: #064266; font-size: 8pt; margin-top: 20px;}
+div.pop label{font-family: arial; color: #064266; font-size: 8pt; display: inline-block; width: 150px;}
+div.pop form input{font-family: arial; color: #064266; font-size: 8pt; width: 200px;}
+div.pop form input.submitpop{width: 50px;}
+div.pop h2{color:#fff; font-family: 'HelveticaNeueLTStd77BdCn'; margin: 0px; margin-left: 50px; margin-bottom: 10px; padding: 0px; padding-top: 20px; text-transform:uppercase; font-weight:normal; font-size:24px;}
+div.pop ul.nav{list-style: none; margin: 0px; padding: 0px; margin-bottom: 20px; margin-top: 18px;}
+div.pop ul.nav li{display: inline;}
+div.pop ul.nav li a{padding: 7px; background: #2d85c2; color: #fff; height: 10em;}
+div.pop ul.nav li a.admin{padding: 7px; background: #072070; color: #ffe400; text-transform: uppercase; height: 10em;}
+div.pop ul.nav li a:hover.admin{padding: 7px; background: #ffe400; color: #072070; text-transform: uppercase; height: 10em;}
+div.pop ul.nav li a.edit-password{padding: 7px; background: #808080; color: #fff; height: 10em;}
+div.pop ul.nav li a:hover{background: #97d0f7;}
+.logged{color: #c4e0ff; font-weight: bold; width: 350px; text-align:right; border:none!important; padding-top: 10px!important;}
+.avail{color:#fff; font-family: 'HelveticaNeueLTStd77BdCn'; margin: 0px; margin-left: 50px; margin-bottom: 10px; padding: 0px; padding-top: 20px; text-transform:uppercase; font-weight:normal; font-size:24px;}
