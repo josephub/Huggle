@@ -6,18 +6,19 @@
 		// check if selected promo is not in featured div
 		if (id != $(arrDivFeatured[0]).attr('couponId')){
 			
-			$(arrDivFeatured[0]).find('h2').fadeOut();
-			$(arrDivFeatured[0]).find('p').fadeOut();
+			var divFeatured = $(arrDivFeatured[0]);
+			divFeatured.find('h2').fadeOut();
+			divFeatured.find('p').fadeOut();
 		
 			var oSelectedPromo = getSelectedPromo(id);
 			
 			if (oSelectedPromo != null){
-				$(arrDivFeatured[0]).attr('couponId',$(oSelectedPromo.CouponType).attr('id'));
-				$(arrDivFeatured[0]).find('h2').html($(oSelectedPromo.CouponType).attr('name'));
-				$(arrDivFeatured[0]).find('p').html($(oSelectedPromo.CouponType).attr('description'));	
-				$(arrDivFeatured[0]).find('h2').fadeIn();
-				$(arrDivFeatured[0]).find('p').fadeIn();
-				$(arrDivFeatured[0]).css("background-image", "url('files/uploads/" + $(oSelectedPromo.CouponType).attr('image') + "')");
+				divFeatured.attr('couponId',$(oSelectedPromo.CouponType).attr('id'));
+				divFeatured.find('h2').html($(oSelectedPromo.CouponType).attr('name'));
+				divFeatured.find('p').html($(oSelectedPromo.CouponType).attr('description'));	
+				divFeatured.find('h2').fadeIn();
+				divFeatured.find('p').fadeIn();
+				divFeatured.css("background-image", "url('files/uploads/" + $(oSelectedPromo.CouponType).attr('image') + "')");
 				$('#dealInfoLink').attr('href','campaigns/get_deal_info/'+$(oSelectedPromo.Campaign).attr('id'));
 			}
 		}
