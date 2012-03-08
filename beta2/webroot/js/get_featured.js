@@ -41,7 +41,6 @@ function cycle(){
 
 var index = window.current_pic_index % 4;
 window.current_pic_index = index + 1;  
-console.log(index);
 renderSelectedPromo(window.pic_ids[index]);
 setTimeout("cycle();", 5000);
 };
