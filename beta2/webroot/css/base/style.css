@@ -1,8 +1,8 @@
 /* CSS Document */
 @font-face {
  font-family: 'HelveticaNeueLTStd77BdCn';
- src: url('/fonts/helveticaneueltstd-bdcn-webfont.eot');
- src: url('/fonts/helveticaneueltstd-bdcn-webfont.eot?#iefix') format('embedded-opentype'),  url('fonts/helveticaneueltstd-bdcn-webfont.woff') format('woff'),  url('fonts/helveticaneueltstd-bdcn-webfont.ttf') format('truetype'),  url('fonts/helveticaneueltstd-bdcn-webfont.svg#HelveticaNeueLTStd77BdCn') format('svg');
+ src: url('../../fonts/helveticaneueltstd-bdcn-webfont.eot');
+ src: url('../../fonts/helveticaneueltstd-bdcn-webfont.eot?#iefix') format('embedded-opentype'),  url('../../fonts/helveticaneueltstd-bdcn-webfont.woff') format('woff'),  url('../../fonts/helveticaneueltstd-bdcn-webfont.ttf') format('truetype'),  url('../../fonts/helveticaneueltstd-bdcn-webfont.svg#HelveticaNeueLTStd77BdCn') format('svg');
  font-weight: normal;
  font-style: normal;
 }
