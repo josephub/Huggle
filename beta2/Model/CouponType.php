@@ -75,20 +75,20 @@ class CouponType extends AppModel {
 		),
 	);
 
-		var $actsAs = array(
-    'MeioUpload' => array(
-        'image' => array(
-            'dir' => 'files{DS}uploads',
-            'create_directory' => true,
-            'allowed_mime' => array('image/jpeg', 'image/pjpeg', 'image/png'),
-            'allowed_ext' => array('.jpg', '.jpeg', '.png'),
-            'thumbsizes' => array(
-                'normal' => array('width'=>200, 'height'=>200),
-            ),
-            'default' => 'default.jpg',
-        )
-    )
-);
+		//var $actsAs = array(
+    //'MeioUpload' => array(
+    //    'image' => array(
+    //        'dir' => 'files{DS}uploads',
+    //        'create_directory' => true,
+    //        'allowed_mime' => array('image/jpeg', 'image/pjpeg', 'image/png'),
+    //        'allowed_ext' => array('.jpg', '.jpeg', '.png'),
+    //        'thumbsizes' => array(
+    //            'normal' => array('width'=>200, 'height'=>200),
+    //        ),
+    //        'default' => 'default.jpg',
+    //    )
+    //)
+    //);
 
 	//The Associations below have been created with all possible keys, those that are not needed can be removed
 
