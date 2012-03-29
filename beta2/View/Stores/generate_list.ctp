@@ -4,45 +4,46 @@
 	 * Copyright: 2010 - Allan Jardine
 	 * License:   GPL v2 or BSD (3-point)
 	 */
-	
+
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	 * Easy set variables
 	 */
-	
+
 	/* Array of database columns which should be read and sent back to DataTables. Use a space where
 	 * you want to insert a non-database field (for example a counter or static image)
 	 */
 	$aColumns = array( 'id', 'name', 'location' );
-	
+
 	/* Indexed column (used for fast and accurate table cardinality) */
 	$sIndexColumn = "id";
-	
+
 	/* DB table to use */
 	$sTable = "stores";
-	
-	/* Database connection information */
-	$gaSql['user']       = 'huggleph_d34l';
-	$gaSql['password']   = "adglKHSKJGH98-!";
-	$gaSql['db']         = "huggleph_beta2";
-	$gaSql['server']     = "localhost";
-	
-	
+  $dbConfig = Configure::Read('DBCONFIG');
+
+  /* Database connection information */
+  $gaSql['user']       = $dbConfig['user'];
+  $gaSql['password']   = $dbConfig['password'];
+  $gaSql['db']         = $dbConfig['db'];
+  $gaSql['server']     = $dbConfig['server'];
+
+
 	/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 	 * If you just want to use the basic configuration for DataTables with PHP server-side, there is
 	 * no need to edit below this line
 	 */
-	
-	/* 
+
+	/*
 	 * MySQL connection
 	 */
 	$gaSql['link'] =  mysql_pconnect( $gaSql['server'], $gaSql['user'], $gaSql['password']  ) or
 		die( 'Could not open connection to server' );
-	
-	mysql_select_db( $gaSql['db'], $gaSql['link'] ) or 
+
+	mysql_select_db( $gaSql['db'], $gaSql['link'] ) or
 		die( 'Could not select database '. $gaSql['db'] );
-	
-	
-	/* 
+
+
+	/*
 	 * Paging
 	 */
 	$sLimit = "";
@@ -51,8 +52,8 @@
 		$sLimit = "LIMIT ".mysql_real_escape_string( $_GET['iDisplayStart'] ).", ".
 			mysql_real_escape_string( $_GET['iDisplayLength'] );
 	}
-	
-	
+
+
 	/*
 	 * Ordering
 	 */
@@ -67,16 +68,16 @@
 				 	".mysql_real_escape_string( $_GET['sSortDir_'.$i] ) .", ";
 			}
 		}
-		
+
 		$sOrder = substr_replace( $sOrder, "", -2 );
 		if ( $sOrder == "ORDER BY" )
 		{
 			$sOrder = "";
 		}
 	}
-	
-	
-	/* 
+
+
+	/*
 	 * Filtering
 	 * NOTE this does not match the built-in DataTables filtering which does it
 	 * word by word on any field. It's possible to do here, but concerned about efficiency
@@ -93,7 +94,7 @@
 		$sWhere = substr_replace( $sWhere, "", -3 );
 		$sWhere .= ')';
 	}
-	
+
 	/* Individual column filtering */
 	for ( $i=0 ; $i<count($aColumns) ; $i++ )
 	{
@@ -110,8 +111,8 @@
 			$sWhere .= $aColumns[$i]." LIKE '%".mysql_real_escape_string($_GET['sSearch_'.$i])."%' ";
 		}
 	}
-	
-	
+
+
 	/*
 	 * SQL queries
 	 * Get data to display
@@ -124,7 +125,7 @@
 		$sLimit
 	";
 	$rResult = mysql_query( $sQuery, $gaSql['link'] ) or die(mysql_error());
-	
+
 	/* Data set length after filtering */
 	$sQuery = "
 		SELECT FOUND_ROWS()
@@ -132,7 +133,7 @@
 	$rResultFilterTotal = mysql_query( $sQuery, $gaSql['link'] ) or die(mysql_error());
 	$aResultFilterTotal = mysql_fetch_array($rResultFilterTotal);
 	$iFilteredTotal = $aResultFilterTotal[0];
-	
+
 	/* Total data set length */
 	$sQuery = "
 		SELECT COUNT(".$sIndexColumn.")
@@ -141,8 +142,8 @@
 	$rResultTotal = mysql_query( $sQuery, $gaSql['link'] ) or die(mysql_error());
 	$aResultTotal = mysql_fetch_array($rResultTotal);
 	$iTotal = $aResultTotal[0];
-	
-	
+
+
 	/*
 	 * Output
 	 */
@@ -152,7 +153,7 @@
 		"iTotalDisplayRecords" => $iFilteredTotal,
 		"aaData" => array()
 	);
-	
+
 	while ( $aRow = mysql_fetch_array( $rResult ) )
 	{
 		$row = array();
@@ -167,7 +168,7 @@
 		$row['DT_RowId'] = "row_".$aRow['id'];
 		$output['aaData'][] = $row;
 	}
-	
+
 	echo json_encode( $output );
 
 ?>
